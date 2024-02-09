@@ -1,0 +1,22 @@
+{% extends 'base.html' %} {% block title %}Story Form{% endblock %} {% block
+content %}
+
+<form id="storyForm" action="/story" method="get">
+  <div>
+    <h1>Madlibs</h1>
+  </div>
+  {% for word in words %}
+  <div class="inputDiv">
+    <label for="{{word}}">{{word}}:</label>
+    <input type="text" id="{{word}}" name="{{word}}" />
+  </div>
+  {% endfor %}
+  <input type="hidden" name="story_num" value="{{ story_num }}" />
+  <input
+    type="submit"
+    class="submitbutton"
+    id="formsubmitbutton"
+    value="Submit"
+  />
+</form>
+{% endblock %}
